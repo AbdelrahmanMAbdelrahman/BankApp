@@ -1,0 +1,87 @@
+<form action="" (submit)="saveEmmployee()">
+    <div class="card bg-secondary m-1 p-3">
+        <div class="row">
+        <div class="mb-1 col-8">
+            <label for="fName" class="form-label">First Name</label>
+            <input type="text" name="fName" [(ngModel)]="employeeService.employeeReq.fName" class="form-control" id="fName">
+        </div>
+        <div class="mb-1 col-8">
+            <label for="lName" class="form-label">Last Name</label>
+            <input type="text" name="lName" [(ngModel)]="employeeService.employeeReq.lName" class="form-control" id="lName">
+        </div>
+        <div class="mb-1 col-8">
+            <label for="status" class="form-label">Employee Status</label>
+            <select [(ngModel)]="employeeService.employeeReq.status" name="status" id="status" class="form-select">
+                <option value="1">Active</option>
+                <option value="2">Terminated</option>
+                <option value="3">Leave of Absence</option>
+            </select>
+        </div>
+        <div class="mb-1 col-8">
+            <label for="role" class="form-label">Employee Role</label>
+            <select [(ngModel)]="employeeService.employeeReq.role" name="role" id="role" class="form-select">
+                <option value="1">Business Develpoment Reports</option>
+                <option value="2">CFO</option>
+                <option value="3">COO</option>
+            </select>
+        </div>
+         
+    </div>
+    </div>
+    <div class="card bg-secondary m-1 p-3">
+        <legend class="m-2 text-light">Employee settings</legend>
+        <div class="row p-3">
+            <div class="col-md-6 mb-1">
+                <label for="userName" class="form-label">User Name</label>
+                <input name="userName" [(ngModel)]="employeeService.employeeReq.userName" type="text" id="userName" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="userHash" class="form-label">User Hash</label>
+                <input name="userHash" [(ngModel)]="employeeService.employeeReq.userHash" type="text" id="userHash" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="title" class="form-label">Title</label>
+                <input name="title" type="text" [(ngModel)]="employeeService.employeeReq.title" id="title" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="department" class="form-label">Department</label>
+                <input name="department" type="text" [(ngModel)]="employeeService.employeeReq.department" id="department" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="officePhone" class="form-label">office Phone </label>
+                <input name="officePhone" type="tel" [(ngModel)]="employeeService.employeeReq.officePhone" id="officePhone" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="mobilePhone" class="form-label">Modile Phone</label>
+                <input name="mobilePhone" type="tel" [(ngModel)]="employeeService.employeeReq.mobilePhone" id="mobilePhone" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="reportTo" class="form-label">report To</label>
+                <input name="reportsTo" type="text" [(ngModel)]="employeeService.employeeReq.reportsTo" id="reportTo" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <label for="email" class="form-label">Email</label>
+                <input name="email" type="email" [(ngModel)]="employeeService.employeeReq.email" id="email" class="form-control">
+            </div>
+            <div class="col-md-9 mb-1">
+                <label for="email" class="form-label">Notes</label>
+                <textarea name="notes" name="notes" [(ngModel)]="employeeService.employeeReq.notes" id="notes" class="form-control"></textarea>
+                <!-- <input type="email" id="email" class="form-control"> -->
+            </div>
+        </div>
+    </div>
+    <div class="card bg-secondary m-1 p-3">
+        <div class="row p-3">
+            <div class="col-md-9 mb-1">
+        <label for="primaryAddress" class="form-label">primary Address</label>
+        <textarea name="address" [(ngModel)]="employeeService.employeeReq.Address" name="primaryAddress" id="primaryAddress" class="form-control"></textarea>
+        </div>
+        </div>
+    </div>
+    <div class="btns d-flex ">
+        
+        <input type="submit" class="btn btn-primary m-3">
+        <!-- <button class="btn btn-primary m-3">Save</button> -->
+        <button class="btn btn-secondary m-3">Cancel</button>
+    </div>
+    </form>
