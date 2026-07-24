@@ -7,6 +7,7 @@ email:string,
 role:string,
 status:string,
 title:string,
+address:string,
 department:string,
 userHash: string;
 reportsTo:string,

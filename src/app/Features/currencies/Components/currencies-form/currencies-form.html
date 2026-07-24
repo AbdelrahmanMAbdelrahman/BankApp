@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <legend class="text-primary">Currencies</legend>
+        </div>
+        <div class="card-body">
+
+    <form action="" #curForm="ngForm" (submit)="submitForm()">
+        <div class="form-group">
+            <label for="title" class="form-label">title</label>
+            <input id="title" name="title" required ngModel type="text" class="form-control" #title="ngModel">
+        </div>
+        <span class="help-block" *ngIf="!title.valid && title.touched">title can't be empty</span>
+        <div class="form-group">
+            <label for="rate" class="form-label">Rate</label>
+            <input id="rate" name="rate" required ngModel type="text" class="form-control" #currency="ngModel">
+        </div>
+        <span class="help-block" *ngIf="!currency.valid && currency.touched">Currency can't be empty</span>
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" rows="3" ngModel></textarea>
+        </div>
+        
+        <input type="submit" class="btn btn-primary" [disabled]="!curForm.valid">
+    </form>
+</div>
+<div class="row" *ngIf="submited">
+    <div class="col-md-4"><label for="">{{this.currency.title}}</label></div>
+    <div class="col-md-4"><label for="">{{this.currency.rate}}</label></div>
+    <div class="col-md-4"><label for="">{{this.currency.description}}</label></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>

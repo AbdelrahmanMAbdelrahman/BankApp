@@ -1,0 +1,48 @@
+<div class="container bg-secondary" style="width: 85vw;">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-light">party form</h1>
+        </div>
+        <div class="card-body">
+            <form action="" (submit)="submit()" [formGroup]="partyForm">
+             <div class="row">
+                 <div class="form-group col-4">
+                     <label for="name" class="from-label">Name</label>
+                     <input type="text" id="name" formControlName="name" class="form-control">
+                </div>
+                    <div class="form-group col-4">
+                        <label for="nativeName" class="from-label">Native Name</label>
+                        <input type="text" id="nativeName" formControlName="nativeName" class="form-control">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="partyCode" class="from-label">Party Code</label>
+                        <input type="text" id="partyCode" formControlName="partyCode" class="form-control">
+                    </div>
+            </div>
+             <div class="row">
+                 <div class="form-group col-4">
+                     <label for="internalCode" class="from-label">Internal Code</label>
+                     <input type="text" id="internalCode" formControlName="internalCode" class="form-control">
+                </div>
+                    <div class="form-group col-4">
+                        <label for="partyGroupName" class="from-label">Party Group Name</label>
+                        <input type="text" id="partyGroupName" formControlName="partyGroupName" class="form-control">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="active" class="from-label">Active</label>
+                        <input type="checkbox" id="partyCode" formControlName="active" class="form-check-box">
+                    </div>
+            </div>
+            <div class="row">
+<div class="col col-5">
+
+    <button type="submit" [disabled]="!partyForm.valid &&partyForm.touched" class="btn btn-primary m-2">Save</button>
+    <button type="button"  class="btn btn-secondary m-2">Cancel</button>
+</div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+ 

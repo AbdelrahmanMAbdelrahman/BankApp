@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from "@angular/router";
 import { EmployeeService } from '../../Services/employeeService';
 import { IEmployeeRes } from '../../Models/employeeRes';
 import { FormsModule } from '@angular/forms';
+import { EmployeeApiService } from '../../Services/employeeApiService';
 
 @Component({
   selector: 'app-employee-details',
@@ -13,16 +14,19 @@ import { FormsModule } from '@angular/forms';
 export class EmployeeDetails implements OnInit {
  employeeRes!:IEmployeeRes;
  
-  constructor(private employeeService:EmployeeService,private route:ActivatedRoute) {
+  constructor(
+    private employeeService:EmployeeService,
+    private employeeApiService:EmployeeApiService,
+    private route:ActivatedRoute) {
        
  
   }
-  ngOnInit(): void {
+ async ngOnInit() {
  debugger;
  
- const id:number=Number(this.route.snapshot.paramMap.get('id'));
+ const id=this.route.snapshot.paramMap.get('id');
  
-this.employeeRes=this.employeeService.findEmployee(id);
+this.employeeRes=await this.employeeApiService.findEmployee(id);
  
   }
 }

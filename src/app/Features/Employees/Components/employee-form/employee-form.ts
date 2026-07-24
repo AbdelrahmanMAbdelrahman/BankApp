@@ -4,6 +4,7 @@ import { IEmployeeReq } from '../../Models/employeeReq';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EmployeeApiService } from '../../Services/employeeApiService';
 
 @Component({
   selector: 'app-employee-form',
@@ -13,12 +14,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EmployeeForm {
     employee?:IEmployeeReq;
-  constructor(public employeeService:EmployeeService,private router:Router,private route:ActivatedRoute) {
-    this.employee=employeeService.employeeReq;
+  constructor(
+    public employeeService:EmployeeService,
+    public employeeApiService:EmployeeApiService,
+    private router:Router,
+    private route:ActivatedRoute) {
+    this.employee=employeeApiService.employeeReq;
   }
 saveEmmployee() {
-  debugger;
-this.employeeService.onSaveEmployee.emit(this.employeeService.employeeReq);  
+  
+
+this.employeeApiService.onSaveEmployee.emit();
 this.router.navigate(['../employeeList'],{relativeTo:this.route});  
+ 
 }
 }

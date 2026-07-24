@@ -1,0 +1,31 @@
+<div class="container bg-secondary">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+<tr>
+    <!-- <th>Serial</th> -->
+    <th>Name</th>
+    <th>Party Code</th>
+    <th>Native name</th>
+    <th>Active</th>
+    <th>Party Group Name</th>
+    <th>UF Internal Code</th>
+</tr>
+        </thead>
+     <tbody>
+        <tr *ngFor="let party of parties  ">
+            <!-- <td><a [routerLink]="['/partyPage/partyDetailPage',party.id]" class="nav-link">
+             {{party.id}}
+            </a> </td> -->
+            <td><a [routerLink]="['/partyPage/partyDetailPage',party.id]" class="nav-link">
+{{party.name}}
+            </a></td>
+            <td>{{party.partyCode}}</td>
+            <td>{{party.nativeName}}</td>
+            <td>{{party.active}}</td>
+            <td>{{party.partyGroupName}}</td>
+            <td>{{party.internalCode}}</td>
+    
+    </tr>
+     </tbody>
+    </table>
+</div>

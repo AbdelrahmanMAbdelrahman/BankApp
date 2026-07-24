@@ -6,6 +6,7 @@ import { EmployeeList } from "../../Components/employee-list/employee-list";
 import { EmployeeListPage } from "../employee-list-page/employee-list-page";
 import { EmployeeService } from '../../Services/employeeService';
 import { IEmployeeReq } from '../../Models/employeeReq';
+import { EmployeeApiService } from '../../Services/employeeApiService';
 
 @Component({
   selector: 'app-employee-page',
@@ -15,13 +16,14 @@ import { IEmployeeReq } from '../../Models/employeeReq';
 })
 export class EmployeePage implements OnInit{
 
-  constructor(private employeeService:EmployeeService) {
+  constructor(private employeeService:EmployeeService,private employeeApiService:EmployeeApiService) {
      ;
     
   }
   ngOnInit(): void {
-this.employeeService.onSaveEmployee.subscribe(( )=>{
-  this.employeeService.AddNewEmployee();
+this.employeeApiService.onSaveEmployee.subscribe(( )=>{
+  // this.employeeService.AddNewEmployee();
+  this.employeeApiService.AddNewEmployee();
 }) 
  
 }
