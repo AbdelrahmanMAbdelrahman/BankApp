@@ -11,7 +11,7 @@ import { PartyService } from './Features/Party/Services/PartyService';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, RouterOutlet, CurrenciesForm, SignUp, StudentPage],
+  imports: [Header, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
   providers:[EmployeeService,PartyService]

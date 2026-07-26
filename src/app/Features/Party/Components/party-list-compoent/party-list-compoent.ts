@@ -9,7 +9,7 @@ import { IPartyRes } from '../../Models/IPartyRes';
 
 @Component({
   selector: 'app-party-list-compoent',
-  imports: [PartyGridItem, CommonModule, RouterLink],
+  imports: [ CommonModule, RouterLink],
   templateUrl: './party-list-compoent.html',
   styleUrl: './party-list-compoent.css',
 })

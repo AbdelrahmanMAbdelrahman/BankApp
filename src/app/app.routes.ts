@@ -14,6 +14,10 @@ import { PartyPage } from './Features/Party/Pages/party-page/party-page';
 import { PartyCreatePage } from './Features/Party/Pages/party-create-page/party-create-page';
 import { PartyDetailCompoent } from './Features/Party/Components/party-detail-compoent/party-detail-compoent';
 import { PartyDetailPage } from './Features/Party/Pages/party-detail-page/party-detail-page';
+import { ContractListPage } from './Features/Contract/Pages/contract-list-page/contract-list-page';
+import { ContractCreatePage } from './Features/Contract/Pages/contract-create-page/contract-create-page';
+import { ContractDetailComponent } from './Features/Contract/Components/contract-detail-component/contract-detail-component';
+import { ContractPage } from './Features/Contract/Pages/contract-page/contract-page';
 
 export const routes: Routes = [
 
@@ -29,5 +33,12 @@ export const routes: Routes = [
         {path:"partyCreatePage/:id",component:PartyCreatePage},
         {path:"partyDetailPage/:id",component:PartyDetailPage},
     ]},
+    {path:"contractPage",component:ContractPage,
+        children:[
+            {path:"contractListPage",component:ContractListPage},
+            {path:"contractCreatePage",component:ContractCreatePage},
+            {path:"contractDetailPage",component:ContractDetailComponent},
+        ]
+    },
     {path:"**",component:PageNotFound}
 ];

@@ -1,0 +1,68 @@
+<div class="container" style="width: 80vw;">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-primary">Contract Form</h1>
+        </div>
+        <div class="card-body">
+        <form action="" [formGroup]="contractForm" (submit)="saveContract()">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="contractNumber" class="form-label">contract Number</label>
+                    <input type="text" id="contractNumber" formControlName="contractNumber" class="form-control">
+                </div>
+                <div class="form-group col-4">
+                    <label for="startDate" class="form-label">start Date</label>
+                    <input type="date" id="startDate" formControlName="startDate" class="form-control">
+                </div>
+                <div class="form-group col-4">
+                    <label for="endDate" class="form-label">end Date</label>
+                    <input type="date" id="endDate" formControlName="endDate" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="contractType" class="form-label">contract Type</label>
+                    <select name="contractType" id="contractType" formControlName="contractType" class="form-select">
+                        <option value="1">With Resource</option>
+                        <option value="2">Risk sharing club-deal</option>
+                    </select>
+                </div>
+                <div class="form-group col-4">
+                    <label for="leasingType" class="form-label">leasing Type</label>
+                    <select name="leasingType" formControlName="leasingType" id="leasingType" class="form-select">
+                        <option value="1">Direct Lease</option>
+                        <option value="2">Sell Lease Back</option>
+                    </select>
+                </div>
+                <div class="form-group col-4">
+                    <label for="iSLetter" class="form-label">is letter</label>
+                    <input type="checkbox" formControlName="iSLetter" class="form-check-box" id="iSLetter">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="party" class="form-label">Party</label>
+                    <select name="party" id="party" class="form-select" formControlName="party">
+                        <option *ngFor="let party of parties" [value]="party.id">{{party.name}}</option>
+                    </select>
+                </div>
+                <div class="col-6 mt-4">
+                    
+                        <button class="btn btn-primary m-2" type="submit">Save</button>
+                     <button class="btn btn-secondary m-2" type="button">cancel</button>
+                    
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+ <!-- ID:string,
+ partyName:string,
+ contractNumber:string,
+ contractType:string,
+ iSLetter:boolean,
+ leasingType:string,
+ endDate:Date,
+ startDate:Date,
+ partyID:string -->

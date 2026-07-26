@@ -1,4 +1,4 @@
-import { map, Observable, Subject } from "rxjs";
+import { BehaviorSubject, map, Observable, Subject } from "rxjs";
 import { IParty } from "../Models/IParty";
 import { IPartyRes } from "../Models/IPartyRes";
 import { IPartyReq } from "../Models/IPartyReq";
@@ -12,6 +12,7 @@ export class PartyApiService{
     OnSaveParty=new Subject<IParty>();
     Parties:IParty[]=[];
   onDeleteParty =new Subject<string>();
+  onLoadParties=new BehaviorSubject<IParty[]>([]);
 
 
 /**
