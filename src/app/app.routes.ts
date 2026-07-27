@@ -18,6 +18,7 @@ import { ContractListPage } from './Features/Contract/Pages/contract-list-page/c
 import { ContractCreatePage } from './Features/Contract/Pages/contract-create-page/contract-create-page';
 import { ContractDetailComponent } from './Features/Contract/Components/contract-detail-component/contract-detail-component';
 import { ContractPage } from './Features/Contract/Pages/contract-page/contract-page';
+import { ContractDetailPage } from './Features/Contract/Pages/contract-detail-page/contract-detail-page';
 
 export const routes: Routes = [
 
@@ -36,8 +37,8 @@ export const routes: Routes = [
     {path:"contractPage",component:ContractPage,
         children:[
             {path:"contractListPage",component:ContractListPage},
-            {path:"contractCreatePage",component:ContractCreatePage},
-            {path:"contractDetailPage",component:ContractDetailComponent},
+            {path:"contractCreatePage/:id",component:ContractCreatePage},
+            {path:"contractDetailPage/:id",component:ContractDetailPage},
         ]
     },
     {path:"**",component:PageNotFound}

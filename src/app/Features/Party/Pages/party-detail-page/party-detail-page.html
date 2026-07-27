@@ -1,1 +1,4 @@
-<app-party-detail-compoent></app-party-detail-compoent>
+@if(party|async ; as party){
+<app-party-detail-compoent
+[party]="party"
+(DeleteParty)="deleteParty($event)"></app-party-detail-compoent>}

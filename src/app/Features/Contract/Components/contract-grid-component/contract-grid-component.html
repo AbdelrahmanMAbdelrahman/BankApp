@@ -1,7 +1,7 @@
 <div class="container m-3">
-    <div class="card">
+    <div class="card bg-secondary">
         <div class="card-header">
-            <h1 class="text-primary">Contracts information</h1>
+            <h1 class="text-light">Contracts information</h1>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped table-hover">
@@ -18,15 +18,28 @@
 
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let contract of contracts">
+                        <td>
+                           <a [routerLink]="[`../contractDetailPage/${contract.id}`]" class="nav-link">
+                                 {{contract.contractNumber}}
+                           </a> </td>
+                        <td>
+                            <a [routerLink]="[`/partyPage/partyDetailPage/${contract.partyID}`]" class="nav-link">
+                            {{contract.partyName}}
+                            </a>
+                        </td>
+                        <td>{{contract.iSLetter ?"yes":"no"}}</td>
+                        <td>{{contract.leasingType}}</td>
+                        <td>{{contract.contractType}}</td>
+                        <td>{{contract.startDate}}</td>
+                        <td>{{contract.endDate}}</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <h6 class="text-secondary mt-3">
+                        count : <span class="bg-secondary">{{contracts.length}}</span>
+                    </h6>
+                </tfoot>
             </table>
         </div>
     </div>

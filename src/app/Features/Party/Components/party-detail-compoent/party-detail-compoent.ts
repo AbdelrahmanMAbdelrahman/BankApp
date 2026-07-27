@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators,  } from '@angular/forms';
 import { PartyService } from '../../Services/PartyService';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -14,15 +14,12 @@ import { IPartyRes } from '../../Models/IPartyRes';
 })
 export class PartyDetailCompoent {
   
-  party!:IParty;
+ @Input() party!:IParty;
   partyForm!:FormGroup;
-  
+@Output()DeleteParty=new EventEmitter<string>();
   
   constructor(
-    private partyService:PartyService,
-    private router:Router,
-    private route:ActivatedRoute,
-    private partyApi:PartyApiService) {
+  ) {
     
   }
   ngOnInit(): void {
@@ -35,15 +32,7 @@ export class PartyDetailCompoent {
       'active':new FormControl({value:'',disabled:true},Validators.required),
       
     });
-    debugger;
-    this.route.paramMap.subscribe(
-      (params)=>{
-        let id:string=(params.get('id'))??"";
-        console.log(id);
-        if(id){
-        this.partyApi.getParty(id).subscribe(
-      (party:IParty)=>{
-       this.party=party;
+
        this.partyForm.setValue({
             name:this.party.name,
             nativeName:this.party.nativeName,
@@ -51,26 +40,16 @@ export class PartyDetailCompoent {
             internalCode:this.party.internalCode,
             partyGroupName:this.party.partyGroupName,
             active:this.party.active
-          }
-          
-        );
+                               });
        
-      },
-      (error)=>{
-        console.log(error);
-      }
-    );
+
     
   }
 
-      
-    }
-  )
-  
-}
 deleteParty(id: string) {
   debugger;
-this.partyApi.onDeleteParty.next(id);
-this.router.navigate(['/partyPage/partyListPage']);
+  this.DeleteParty.emit(id);
+// this.partyApi.onDeleteParty.next(id);
+// this.router.navigate(['/partyPage/partyListPage']);
 }
 }

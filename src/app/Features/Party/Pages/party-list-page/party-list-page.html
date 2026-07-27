@@ -1,2 +1,5 @@
 <app-party-search-compoent></app-party-search-compoent>
-<app-party-list-compoent></app-party-list-compoent>
+@if(parties |async;as parties){
+<app-party-list-compoent
+[parties]="parties"
+></app-party-list-compoent>}

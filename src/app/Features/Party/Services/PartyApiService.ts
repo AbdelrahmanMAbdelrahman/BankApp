@@ -24,30 +24,19 @@ constructor(private http:HttpClient) {
 }  
 
     
-getParty(id: string):Observable< IParty> {//A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.
-
-   return  this.http.get<any>(`https://localhost:7125/api/Party/${id}`).pipe(
-        map((response)=>{
-            
-            if(response &&response.isSuccess && response.value ){
-                
-                return response.value as IParty;
-            }else {
-                throw new Error("error");
-            }
-        })
-     )
-    
+getParty(id: string): Observable<IParty> {
+  return this.http.get<any>(`https://localhost:7125/api/Party/${id}`).pipe(
+    map((response) => {
+      if (response && response.isSuccess && response.value) {
+        return response.value as IParty;
+      }
+      throw new Error("Party not found or request failed");
+    })
+  );
 }
-deleteParty(id:string){
- this.http.delete(`https://localhost:7125/api/Party/${id}`)
- .subscribe(
-    ()=>{},
-   (error)=>{
-    console.log(error.error.errors);
-   }
-
- );
+deleteParty(id:string):Observable<void>{
+return this.http.delete<void>(`https://localhost:7125/api/Party/${id}`);
+  
 }
   saveParty(party: IParty) {
     debugger;

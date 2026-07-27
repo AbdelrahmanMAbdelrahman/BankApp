@@ -1,1 +1,56 @@
-<p>contract-detail-component works!</p>
+<div class="container expanded">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <h3 class="text-primary col-6">contract information</h3>
+                <div class="col-6">
+                    <button [routerLink]="['/contractPage/contractCreatePage',contract?.id]" class="btn btn-primary m-3">Edit</button>
+                    <button (click)="deleteContract(contract?.id)" class="btn btn-danger m-3">Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+             <form action="" method="get">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="contractNumber" class="form-label">contract number</label>
+                        <input type="text" id="contractNumber" readonly name="contractNumber"
+                         [value]="contract?.contractNumber" class="form-control">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="contractType" class="form-label">contract type</label>
+                        <input type="text" id="contractType" readonly name="contractType"
+                         [value]="contract?.contractType" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="party" class="form-label">party</label>
+                        <input type="text" id="contractNumber" readonly name="party"
+                         [value]="contract?.partyName" class="form-control">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="leasingType" class="form-label">leasing type</label>
+                        <input type="text" id="leasingType" readonly name="leasingType"
+                         [value]="contract?.leasingType" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="startDate" class="form-label">start Date</label>
+                        <input type="text" id="startDate" readonly name="startDate"
+                         [value]="contract?.startDate" class="form-control">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="endDate" class="form-label">end Date</label>
+                        <input type="text" id="endDate" readonly name="endDate"
+                         [value]="contract?.endDate" class="form-control">
+                    </div>
+                </div>
+             </form>
+        </div>
+    </div>
+</div>

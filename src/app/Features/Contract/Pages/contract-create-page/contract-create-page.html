@@ -1,1 +1,12 @@
-<app-contract-form-component></app-contract-form-component>
+@if (contractRes|async;as contract ) {
+
+    <app-contract-form-component
+    [contract]="contract"
+    (OnSaveContract)="saveContract($event)"
+    ></app-contract-form-component>
+}@else {
+    <app-contract-form-component
+    
+    (OnSaveContract)="saveContract($event)"
+    ></app-contract-form-component>
+}

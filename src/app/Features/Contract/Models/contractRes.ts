@@ -1,5 +1,5 @@
 export interface IContractRes{
- ID:string,
+ id:string,
  partyName:string,
  contractNumber:string,
  contractType:string,

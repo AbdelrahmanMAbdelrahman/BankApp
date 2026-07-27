@@ -1,1 +1,10 @@
-<p>contract-detail-page works!</p>
+ 
+@if (contract$ |async ;as contract) {
+  <app-contract-detail-component 
+  [contract]="contract"
+  (OnDeleteContract)="deleteContracat($event)"
+  >
+  </app-contract-detail-component>
+} @else {
+  <p>loading ...</p>
+}

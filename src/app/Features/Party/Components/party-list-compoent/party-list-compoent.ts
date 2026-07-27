@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PartyGridItem } from "../party-grid-item/party-grid-item";
 import { PartyService } from '../../Services/PartyService';
 import { IParty } from '../../Models/IParty';
@@ -14,7 +14,7 @@ import { IPartyRes } from '../../Models/IPartyRes';
   styleUrl: './party-list-compoent.css',
 })
 export class PartyListCompoent implements OnInit{
-  parties:IParty[]=[];
+@Input()  parties!:IParty[];
   constructor(private partyService:PartyService,private partyApiService:PartyApiService) {
 
 //     partyApiService.getParty('5e51b1c5-c846-4904-3b97-08dee82b16eb').subscribe(
@@ -28,16 +28,16 @@ export class PartyListCompoent implements OnInit{
   }
 
   ngOnInit(): void {
-    debugger;
-   this. partyApiService.getParties().subscribe(
-  (parts)=>{
-    console.log(parts);
-this.parties=parts;
+//     debugger;
+//    this. partyApiService.getParties().subscribe(
+//   (parts)=>{
+//     console.log(parts);
+// this.parties=parts;
 
-  },
-  (error)=>{
-    console.log(error);
-  }
-);
+//   },
+//   (error)=>{
+//     console.log(error);
+//   }
+// );
   }
 }
