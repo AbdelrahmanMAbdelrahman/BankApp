@@ -36,7 +36,9 @@
             <div class="row">
 <div class="col col-5">
 
-    <button type="submit" [disabled]="!partyForm.valid &&partyForm.touched" class="btn btn-primary m-2">Save</button>
+    <button type="submit" [disabled]="!partyForm.valid &&partyForm.touched" 
+    [disabled]="!partyForm.valid"
+    class="btn btn-primary m-2">Save</button>
     <button type="button"  class="btn btn-secondary m-2">Cancel</button>
 </div>
             </div>

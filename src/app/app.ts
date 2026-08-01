@@ -4,17 +4,18 @@ import { Home } from "./home/home";
 import { Header } from "./home/header/header";
 import { Body } from "./home/body/body";
 import { EmployeeService } from './Features/Employees/Services/employeeService';
-import { CurrenciesForm } from "./Features/currencies/Components/currencies-form/currencies-form";
-import { SignUp } from './Features/currencies/Components/sign-up/sign-up';
+
 import { StudentPage } from "./Features/student/pages/student-page/student-page";
 import { PartyService } from './Features/Party/Services/PartyService';
+import { ContractApiService } from './Features/Contract/Services/ContractApiService';
+import { CurrencyService } from './Features/Currency/Services/CurrencyService';
 
 @Component({
   selector: 'app-root',
   imports: [Header, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  providers:[EmployeeService,PartyService]
+  providers:[EmployeeService,PartyService,ContractApiService,CurrencyService]
   
 })
 export class App {

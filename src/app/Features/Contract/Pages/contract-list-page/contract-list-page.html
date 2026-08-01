@@ -1,5 +1,8 @@
 <div class="container expanded m-3  p-3" style="width: 80vw;">
 
     <app-contract-search-component ></app-contract-search-component>
-    <app-contract-grid-component></app-contract-grid-component>
+    @if(contracts| async ;as contracts){
+    <app-contract-grid-component
+    [contracts]="contracts"
+    ></app-contract-grid-component>}
 </div>

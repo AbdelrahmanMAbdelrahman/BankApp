@@ -1,0 +1,5 @@
+@if(currency | async; as currency){
+<app-currency-detail-component
+[currency]="currency"
+(onDeleteCurrency)="deleteCurrency()"
+></app-currency-detail-component>}

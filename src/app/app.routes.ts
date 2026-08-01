@@ -19,6 +19,10 @@ import { ContractCreatePage } from './Features/Contract/Pages/contract-create-pa
 import { ContractDetailComponent } from './Features/Contract/Components/contract-detail-component/contract-detail-component';
 import { ContractPage } from './Features/Contract/Pages/contract-page/contract-page';
 import { ContractDetailPage } from './Features/Contract/Pages/contract-detail-page/contract-detail-page';
+import { CurrencyPage } from './Features/Currency/Pages/currency-page/currency-page';
+import { CurrencyListPage } from './Features/Currency/Pages/currency-list-page/currency-list-page';
+import { CurrencyCreatePage } from './Features/Currency/Pages/currency-create-page/currency-create-page';
+import { CurrencyDetailPage } from './Features/Currency/Pages/currency-detail-page/currency-detail-page';
 
 export const routes: Routes = [
 
@@ -39,6 +43,14 @@ export const routes: Routes = [
             {path:"contractListPage",component:ContractListPage},
             {path:"contractCreatePage/:id",component:ContractCreatePage},
             {path:"contractDetailPage/:id",component:ContractDetailPage},
+        ]
+    },
+    {
+        path:"CurrencyPage",component:CurrencyPage,
+        children:[
+            {path:"CurrencyListPage",component:CurrencyListPage},
+            {path:"CurrencyCreatePage/:id",component:CurrencyCreatePage},
+            {path:"CurrencyDetailPage/:id",component:CurrencyDetailPage},
         ]
     },
     {path:"**",component:PageNotFound}

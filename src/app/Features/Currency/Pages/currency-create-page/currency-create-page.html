@@ -1,0 +1,13 @@
+<div class="container">
+@if(currency|async;as currency){
+    <app-currency-create-component
+    (OnSaveCurrency)="saveCurrency($event)"
+    [currency]="currency"
+    ></app-currency-create-component>}
+@else {
+    <app-currency-create-component
+    (OnSaveCurrency)="saveCurrency($event)"
+     
+    ></app-currency-create-component> 
+}
+</div>

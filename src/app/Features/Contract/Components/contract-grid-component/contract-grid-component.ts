@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ContractApiService } from '../../Services/ContractApiService';
 import { IContractRes } from '../../Models/contractRes';
 import { CommonModule } from '@angular/common';
@@ -11,20 +11,20 @@ import { RouterLink } from "@angular/router";
   styleUrl: './contract-grid-component.css',
 })
 export class ContractGridComponent implements OnInit {
-contracts:IContractRes[]=[];
+@Input() contracts?:IContractRes[];
   constructor(private contractApi:ContractApiService) {
     
     
   }
   ngOnInit(): void {
-    this.loadContracts();
+    // this.loadContracts();
   }
   private loadContracts(){
-    this.contractApi.OnLoadContracts
-    .subscribe(
-      (contracts:IContractRes[])=>{
-       this.contracts=contracts;
-      }
-    )
+    // this.contractApi.OnLoadContracts
+    // .subscribe(
+    //   (contracts:IContractRes[])=>{
+    //    this.contracts=contracts;
+    //   }
+    // )
   }
 }

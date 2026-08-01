@@ -2,3 +2,7 @@
 <app-party-detail-compoent
 [party]="party"
 (DeleteParty)="deleteParty($event)"></app-party-detail-compoent>}
+@if(contracts |async;as contracts){
+<app-contract-grid-component 
+[contracts]="contracts"
+></app-contract-grid-component>}

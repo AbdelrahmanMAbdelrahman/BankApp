@@ -1,0 +1,8 @@
+<div class="container">
+
+    <app-currency-search-component></app-currency-search-component>
+    @if(currencies|async;as currencies){
+    <app-currency-list-component
+    [Currencies]="currencies"
+    ></app-currency-list-component>}
+</div>

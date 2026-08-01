@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-primary">Currency Details</h3>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col col-6">Currency : {{currency.name}} </div>
+                <div class="col col-6">code : {{currency.code}} </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col col-4">status : {{currency.status?"Active":"inActive"}}</div>
+                <div class="col col-4">default : {{currency.defaultCurrency?"true":"false"}}</div>
+                <div class="col col-4">Base Currency : {{currency.baseCurrency?"true":"false"}}</div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col col-6">
+                    <button class="btn btn-primary m-1 col-3"
+                    [routerLink]="['/CurrencyPage/CurrencyCreatePage/',currency.id]"
+                    >Edit</button>
+                    <button class="btn btn-danger m-1 col-3" (click)="deleteCurrency()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

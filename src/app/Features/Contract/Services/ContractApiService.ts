@@ -24,6 +24,19 @@ export class ContractApiService{
             })
         );
     }
+    getContractsForThisParty(id: string): Observable<IContractRes[]> {
+        debugger;
+      return this.http.get(`${this.url}/Party/${id}`)
+      .pipe(
+        map(
+            (contracts)=>{
+                if(contracts){
+                    return contracts as IContractRes[];
+                }else {throw new Error("un expected error");}
+            }
+        )
+      )
+    }
     updateContract(contract: IContractReq, id: string) {
         return this.http.put(`${this.url}/${id}`,
             contract

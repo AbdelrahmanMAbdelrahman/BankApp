@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrenciesForm } from './currencies-form';
+import { CurrencyCreatePage } from './currency-create-page';
 
-describe('CurrenciesForm', () => {
-  let component: CurrenciesForm;
-  let fixture: ComponentFixture<CurrenciesForm>;
+describe('CurrencyCreatePage', () => {
+  let component: CurrencyCreatePage;
+  let fixture: ComponentFixture<CurrencyCreatePage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CurrenciesForm],
+      imports: [CurrencyCreatePage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CurrenciesForm);
+    fixture = TestBed.createComponent(CurrencyCreatePage);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
