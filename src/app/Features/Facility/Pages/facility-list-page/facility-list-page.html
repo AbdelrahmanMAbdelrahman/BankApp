@@ -1,0 +1,21 @@
+@if(data |async;as data){
+    <!-- @if(parties|async;as parties){ -->
+<app-facility-search-component
+[currencies]="data.currencies"
+[parties]="data.parties"
+(OnSearch)="search($event)"
+></app-facility-search-component>
+}
+<!-- } -->
+@else {
+  <app-facility-search-component
+
+></app-facility-search-component>  
+}
+<div class="container">
+    @if((paginated|async);as result){
+<app-facility-list-component
+[paginated]="result"
+(OnPaginate)="paginate($event)"
+></app-facility-list-component>}
+</div>

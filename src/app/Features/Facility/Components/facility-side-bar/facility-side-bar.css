@@ -1,0 +1,17 @@
+
+    .container{
+        background-color: grey;
+        padding: 10px;
+        height: 90vh;
+    }
+    *{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: white;
+    }
+.nav-item :hover{
+    background-color: rgb(49, 49, 49);
+    padding: 10px;
+}

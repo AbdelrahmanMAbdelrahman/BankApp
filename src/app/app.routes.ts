@@ -23,6 +23,10 @@ import { CurrencyPage } from './Features/Currency/Pages/currency-page/currency-p
 import { CurrencyListPage } from './Features/Currency/Pages/currency-list-page/currency-list-page';
 import { CurrencyCreatePage } from './Features/Currency/Pages/currency-create-page/currency-create-page';
 import { CurrencyDetailPage } from './Features/Currency/Pages/currency-detail-page/currency-detail-page';
+import { FacilityPage } from './Features/Facility/Pages/facility-page/facility-page';
+import { FacilityListPage } from './Features/Facility/Pages/facility-list-page/facility-list-page';
+import { FacilityCreatePage } from './Features/Facility/Pages/facility-create-page/facility-create-page';
+import { FacilityDetailPage } from './Features/Facility/Pages/facility-detail-page/facility-detail-page';
 
 export const routes: Routes = [
 
@@ -51,6 +55,14 @@ export const routes: Routes = [
             {path:"CurrencyListPage",component:CurrencyListPage},
             {path:"CurrencyCreatePage/:id",component:CurrencyCreatePage},
             {path:"CurrencyDetailPage/:id",component:CurrencyDetailPage},
+        ]
+    },
+    {
+        path:"FacilityPage",component:FacilityPage,
+        children:[
+            {path:"FacilityListPage",component:FacilityListPage},
+            {path:"FacilityCreatePage/:id",component:FacilityCreatePage},
+            {path:"FacilityDetailPage/:id",component:FacilityDetailPage},
         ]
     },
     {path:"**",component:PageNotFound}

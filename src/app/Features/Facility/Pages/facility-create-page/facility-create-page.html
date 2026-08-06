@@ -1,0 +1,10 @@
+
+@if(data|async;as data){
+<app-facility-create-component
+[currencies]="data.currencies"
+[parties]="data.parties"
+[facility]="facilityRes"
+(OnSaveFacility)="saveFacility($event)"
+></app-facility-create-component>
+}
+ 

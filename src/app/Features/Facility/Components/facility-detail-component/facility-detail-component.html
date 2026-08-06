@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h6 class="text-primary">facility details</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-3">
+                    <label for="" class="form-label">Acount Number</label>
+                    <input type="text" [disabled]="true" [value]="facility?.accountNumber" class="form-control">
+                </div>
+                <div class="form-group col-3">
+                    <label for="" class="form-label">Party Name</label>
+                    <input type="text" [disabled]="true" [value]="facility?.partyName" class="form-control">
+                </div>
+                <div class="form-group col-3">
+                    <label for="" class="form-label">Currency</label>
+                    <input type="text" [disabled]="true" [value]="facility?.currencyName" class="form-control">
+                </div>
+                <div class="form-group col-3">
+                    <label for="" class="form-label">Facility Type</label>
+                    <input type="text" [disabled]="true" [value]="facilityType[facility?.facilityType!]" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-end">
+                <button [routerLink]="['/FacilityPage','FacilityCreatePage',facility?.id]" class="btn btn-primary m-1">Edit</button>
+                <button (click)="deleteFacility()" class="btn btn-danger m-1">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
