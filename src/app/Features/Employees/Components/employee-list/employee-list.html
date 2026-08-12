@@ -16,8 +16,8 @@
     </tr>
     </thead>
        <tbody>
-    <tr *ngFor="let emp of employees">
-        <td><a [routerLink]="['../employeeDetail',emp.id]">{{emp.fName + ''+emp.lName}}</a> </td>
+    <tr *ngFor="let emp of response?.value">
+        <td><a [routerLink]="['../employeeDetailPage',emp.id]">{{emp.fName + ''+emp.lName}}</a> </td>
         <td>{{emp.department}}</td>
         <td>S{{emp.reportsTo}}</td>
         <td>{{emp.email}}</td>

@@ -1,0 +1,16 @@
+.page{
+width: 100vw;
+height: 100vh;
+/* background-color: cyan; */
+}
+.app-header{
+    height: 5%;
+    width: 100%;
+    /* background-color: green; */
+}
+.router-outlet{
+    height: 95%;
+    width: 100%;
+    /* background-color: blue; */
+    
+}

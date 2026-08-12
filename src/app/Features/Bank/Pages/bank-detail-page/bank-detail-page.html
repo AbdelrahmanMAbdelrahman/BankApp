@@ -1,0 +1,7 @@
+@if(bankRes|async;as bank){
+<app-bank-detail-component [bank]="bank"></app-bank-detail-component>
+}
+@else {
+<app-bank-detail-component></app-bank-detail-component>
+
+}

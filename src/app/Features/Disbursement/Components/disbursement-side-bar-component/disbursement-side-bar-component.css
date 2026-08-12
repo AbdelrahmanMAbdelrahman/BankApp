@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.nav-item{
+    height: 50px;
+    padding: 10px;
+    /* padding: 30px; */
+    /* background-color: grey; */
+}
+/* li :hover{
+    background-color: rgb(48, 47, 47);
+} */
+.side-bar{
+    border-top: 2px solid black;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: gray;
+}
+.nav-item:hover{
+    /* width: 15%; */
+    background-color: rgb(48, 47, 47);
+}

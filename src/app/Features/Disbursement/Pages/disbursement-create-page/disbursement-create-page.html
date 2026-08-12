@@ -1,0 +1,12 @@
+@if(data|async ; as data){
+<app-disbursement-create-component
+[facilities]="data.facilities.items"
+[contracts]="data.contracts"
+[disbursement]="disbursement"
+(OnSave)="saveDisbursement($event)"
+></app-disbursement-create-component>
+}
+@else {
+<app-disbursement-create-component></app-disbursement-create-component>
+
+}

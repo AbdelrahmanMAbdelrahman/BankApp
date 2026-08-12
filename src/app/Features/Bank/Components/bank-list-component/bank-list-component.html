@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">
+        <h6 class="text-primary">Banks</h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Lookup Code</th>
+                    <th>Swift Code</th>
+                    <th>Currency</th>
+                    <th>Phone</th>
+                    <th>Fax</th>
+                    <th>Email</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bank of banks?.items">
+                    <td>{{bank.lookupCode}}</td>
+                    <td>{{bank.swiftCode}}</td>
+                    <td>{{bank.currency}}</td>
+                    <td>{{bank.phone}}</td>
+                    <td>{{bank.fax}}</td>
+                    <td>{{bank.eMail}}</td>
+                    <td>{{bank.active?'yes':'no'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <h6 class="text-info">records : {{banks?.items?.length}}</h6>
+        <div class="paginate">
+            <button class="btn btn-outline-primary" (click)="getPrevious()">Previous</button>
+             <span class="align-self-center">Page {{banks?.totalPages}} / {{banks?.pageNumber}}</span>
+            <button class="btn btn-outline-primary" (click)="getNext()">Next</button>
+        </div>
+    </div>
+</div>
+
+ 

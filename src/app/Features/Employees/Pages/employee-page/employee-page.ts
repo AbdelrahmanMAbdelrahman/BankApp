@@ -14,17 +14,19 @@ import { EmployeeApiService } from '../../Services/employeeApiService';
   templateUrl: './employee-page.html',
   styleUrl: './employee-page.css',
 })
-export class EmployeePage implements OnInit{
+export class EmployeePage {
 
-  constructor(private employeeService:EmployeeService,private employeeApiService:EmployeeApiService) {
-     ;
+  constructor(
+    private employeeService:EmployeeService,
+    private employeeApiService:EmployeeApiService) {
+
     
   }
-  ngOnInit(): void {
-this.employeeApiService.onSaveEmployee.subscribe(( )=>{
-  // this.employeeService.AddNewEmployee();
-  this.employeeApiService.AddNewEmployee();
-}) 
+//   ngOnInit(): void {
+// this.employeeApiService.onSaveEmployee.subscribe(( )=>{
+//   // this.employeeService.AddNewEmployee();
+//   this.employeeApiService.AddNewEmployee();
+// }) 
  
-}
+// }
 }

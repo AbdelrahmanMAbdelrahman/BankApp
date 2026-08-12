@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header">
+        <h6 class="text-primary">Bank Details</h6>
+    </div>
+    <div class="card-body">
+        <div class="bank-fields">
+            <div class="form-group">
+                <label for="lookupCode" class="form-label">Lookup code</label>
+                <input [disabled]="true" [value]="bank?.lookupCode" type="text" id="lookupCode" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="abbreviation" class="form-label">Appreviation</label>
+                <input [disabled]="true" [value]="bank?.abbreviation" type="text" id="abbreviation" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="swiftCode" class="form-label">Swift Code</label>
+                <input [disabled]="true" [value]="bank?.swiftCode" type="text" id="swiftCode" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Address</label>
+                <input [disabled]="true" [value]="bank?.address" type="text" id="address" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input [disabled]="true" [value]="bank?.phone" type="text" id="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fax" class="form-label">fax</label>
+                <input [disabled]="true" [value]="bank?.fax" type="text" id="fax" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input [disabled]="true" [value]="bank?.eMail" type="text" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="active" class="form-label">Active</label>
+                <input [disabled]="true" [value]="bank?.active?'active':'not Active'" type="text" id="active" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="currency" class="form-label">currency</label>
+                <input [disabled]="true" [value]="bank?.currency" type="text" id="currency" class="form-control">
+            </div>
+            <div class="form-group description">
+                <label for="description" class="form-label">Description</label>
+                <textarea [disabled]="true" [value]="bank?.description" type="text" id="description" class="form-control "></textarea>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="footer-btns">
+            <button (click)="editBank()" class="btn btn-primary">edit</button>
+            <button class="btn btn-danger" (click)="deleteBank()">Delete</button>
+        </div>
+    </div>
+</div>

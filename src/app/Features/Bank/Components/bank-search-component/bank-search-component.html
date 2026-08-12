@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+        <h6 class="text-primary">Bank Search</h6>
+    </div>
+    <form action="" [formGroup]="bankForm!">
+
+        <div class="card-body">
+            
+            <div class="form-group">
+                <label for="currency" class="form-label">Currency</label>
+                <select name="currency" formControlName="currency" id="currency" class="form-select">
+                    <option value=""></option>
+                </select>
+            </div>
+        <div class="form-group">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" id="address" formControlName="address" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" id="phone" formControlName="phone" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="fax" class="form-label">Fax</label>
+            <input type="text" id="fax" formControlName="fax" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" id="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-check mt-5">
+            <input type="checkbox" id="active" class="form-check-input">
+            <label for="active" formControlName="active" class="form-check-label">Active</label>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" (click)="searchBank()">Search</button>
+        <button class="btn btn-secondary" (click)="clearForm()">Clear</button>
+    </div>
+</form>
+</div>

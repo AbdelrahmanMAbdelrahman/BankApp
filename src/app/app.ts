@@ -9,13 +9,15 @@ import { StudentPage } from "./Features/student/pages/student-page/student-page"
 import { PartyService } from './Features/Party/Services/PartyService';
 import { ContractApiService } from './Features/Contract/Services/ContractApiService';
 import { CurrencyService } from './Features/Currency/Services/CurrencyService';
+import { DisbursementService } from './Features/Disbursement/Services/DisbursementService';
+import { EmployeeApiService } from './Features/Employees/Services/employeeApiService';
 
 @Component({
   selector: 'app-root',
   imports: [Header, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  providers:[EmployeeService,PartyService,ContractApiService,CurrencyService]
+  providers:[EmployeeApiService,PartyService,ContractApiService,CurrencyService,DisbursementService]
   
 })
 export class App {

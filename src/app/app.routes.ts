@@ -27,15 +27,23 @@ import { FacilityPage } from './Features/Facility/Pages/facility-page/facility-p
 import { FacilityListPage } from './Features/Facility/Pages/facility-list-page/facility-list-page';
 import { FacilityCreatePage } from './Features/Facility/Pages/facility-create-page/facility-create-page';
 import { FacilityDetailPage } from './Features/Facility/Pages/facility-detail-page/facility-detail-page';
+import { DisbursementPage } from './Features/Disbursement/Pages/disbursement-page/disbursement-page';
+import { DisbursementListPage } from './Features/Disbursement/Pages/disbursement-list-page/disbursement-list-page';
+import { DisbursementCreatePage } from './Features/Disbursement/Pages/disbursement-create-page/disbursement-create-page';
+import { DisbursementDetailPage } from './Features/Disbursement/Pages/disbursement-detail-page/disbursement-detail-page';
+import { BankPage } from './Features/Bank/Pages/bank-page/bank-page';
+import { BankListPage } from './Features/Bank/Pages/bank-list-page/bank-list-page';
+import { BankCreatePage } from './Features/Bank/Pages/bank-create-page/bank-create-page';
+import { BankDetailPage } from './Features/Bank/Pages/bank-detail-page/bank-detail-page';
 
 export const routes: Routes = [
 
     {path:"",component:Home},
     {path:"employees",component:EmployeePage,children:[
         
-        {path:"employeeCreate",component:EmployeeCreatPage},
-        {path:"employeeList",component:EmployeeListPage},
-        {path:"employeeDetail/:id",component:EmployeeDetailPage},
+        {path:"employeeCreatePage",component:EmployeeCreatPage},
+        {path:"employeeListPage",component:EmployeeListPage},
+        {path:"employeeDetailPage/:id",component:EmployeeDetailPage},
     ]},
     {path:"partyPage",component:PartyPage,children:[
         {path:"partyListPage",component:PartyListPage},
@@ -63,6 +71,22 @@ export const routes: Routes = [
             {path:"FacilityListPage",component:FacilityListPage},
             {path:"FacilityCreatePage/:id",component:FacilityCreatePage},
             {path:"FacilityDetailPage/:id",component:FacilityDetailPage},
+        ]
+    },
+    {
+        path:"DisbursementPage",component:DisbursementPage,
+        children:[
+            {path:"DisbursementListPage",component:DisbursementListPage},
+            {path:"DisbursementCreatePage/:id",component:DisbursementCreatePage},
+            {path:"DisbursementDetailPage/:id",component:DisbursementDetailPage},
+        ]
+    },
+    {
+        path:"BankPage",component:BankPage,
+        children:[
+            {path:"BankListPage",component:BankListPage},
+            {path:"BankCreatePage/:id",component:BankCreatePage},
+            {path:"BankDetailPage/:id",component:BankDetailPage},
         ]
     },
     {path:"**",component:PageNotFound}

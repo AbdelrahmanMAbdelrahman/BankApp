@@ -1,0 +1,10 @@
+@if(currencies|async;as currencies){
+    <app-bank-create-component
+    (OnSaveBank)="saveBank($event)"
+    [Curriencies]="currencies"
+    ></app-bank-create-component>
+}
+@else {
+     <app-bank-create-component
+    ></app-bank-create-component>
+}

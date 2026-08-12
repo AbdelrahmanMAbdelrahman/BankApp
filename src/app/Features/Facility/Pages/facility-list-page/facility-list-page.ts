@@ -18,7 +18,7 @@ import { IFacilityReq } from '../../Models/IFacilityReq';
 
 @Component({
   selector: 'app-facility-list-page',
-  imports: [FacilityListComponent, AsyncPipe, FacilityCreateComponent, FacilitySearchComponent],
+  imports: [FacilityListComponent, AsyncPipe, FacilitySearchComponent],
   templateUrl: './facility-list-page.html',
   styleUrl: './facility-list-page.css',
 })

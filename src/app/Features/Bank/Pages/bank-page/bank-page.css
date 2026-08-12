@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.bank-page{
+    height: 95%;
+    width: 100%;
+    display: flex;
+}
+.side-bar{
+    height: 100%;
+    width: 5%;
+}
+.side-bar:hover{
+    width: 15%;
+    transition: .5s;
+}
+.router-outlet{
+    height: 100%;
+    width: 100%;
+}

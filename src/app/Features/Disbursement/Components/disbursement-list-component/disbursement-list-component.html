@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+        <h6 class="text-primary">
+            Disbursements
+        </h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                   <th>Serial</th>
+                   <th>Facility</th>
+                   <th>Contract</th>
+                   <th>Amount</th>
+                   <th>Date</th>
+                   <th>Method</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pag of paginated?.items let index" >
+                    <td>
+                        <a [routerLink]="['/DisbursementPage','DisbursementDetailPage',pag.id]" class="nav-link">_</a></td>
+                    <td>{{pag.facility}}</td>
+                    <td>{{pag.contract}}</td>
+                    <td>{{pag.amount}}</td>
+                    <td>{{pag.disbursementDate}}</td>
+                    <td>{{disbursementMethod[ pag.disbursementMethod]}}</td>
+      
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <h6 class="text-info mt-2">records : {{paginated?.items?.length}}</h6>
+        <div class="pagination">
+            <button [disabled]="!paginated?.hasPreviousPage" class="btn btn-outline-primary m-1">Previous</button>
+            <span class="align-self-center"> Page {{paginated?.totalPages}} / {{paginated?.pageNumber}} </span>
+            <button [disabled]="!paginated?.hasNextPage" class="btn btn-outline-primary m-1">Next</button>
+        </div>
+    </div>
+</div>
+

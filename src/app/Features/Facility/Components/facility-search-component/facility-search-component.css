@@ -3,3 +3,7 @@
     /* width: 300px; */
     margin: 10px;
 }
+.container{
+    width: 83vw;
+    border:  5px solid grey;
+}

@@ -1,3 +1,5 @@
+import { imageRes } from "./imageRes";
+
 export interface IEmployeeRes {
 id:number,
 fName:string,
@@ -14,6 +16,7 @@ reportsTo:string,
 Address:string,
 officePhone:string,
 mobilePhone:string,
-notes:string
+notes:string,
+image:imageRes
 
 }

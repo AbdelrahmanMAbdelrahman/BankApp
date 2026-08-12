@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { IEmployeeRes } from '../../Models/employeeRes';
-import { EmployeeService } from '../../Services/employeeService';
+
 import { CommonModule } from '@angular/common';
 import { EmployeeApiService } from '../../Services/employeeApiService';
+import { ApiResponse } from '../../../../Global/ApiResponse';
 
 @Component({
   selector: 'app-employee-list',
@@ -12,20 +13,19 @@ import { EmployeeApiService } from '../../Services/employeeApiService';
   styleUrl: './employee-list.css',
 })
 export class EmployeeList implements OnInit{
-employees:IEmployeeRes[]=[];
-  constructor(private employeeService:EmployeeService,private employeeApiService:EmployeeApiService) {
-    // console.log('employee count is '+this.employees.length);
-    // this.employees=employeeService.mapEmployeeToEmployeeRes();
-    // console.log(this.employees);
+@Input() response?:ApiResponse< IEmployeeRes[]>;
+  constructor() {
+  
     
     
   }
  async ngOnInit() {
-   this.employees=await this.employeeApiService.GetEmployee();
-  this.employeeApiService.OnEmployeesChanged.subscribe((emps)=>{
-this.employees=emps;
-  })
+  console.log('employees',this.response);
+//    this.employees=await this.employeeApiService.GetEmployee();
+//   this.employeeApiService.OnEmployeesChanged.subscribe((emps)=>{
+// this.employees=emps;
+//   })
 
-   console.table(this.employees);
+//    console.table(this.employees);
   }
 } 

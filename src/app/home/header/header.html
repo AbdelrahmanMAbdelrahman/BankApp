@@ -1,24 +1,51 @@
-  <div class="nav-bar">
- <div class="home-icon"><i class="material-icons"><a class="nav-link" [routerLink]="['']">Home</a></i></div>
- <div class="nav-links" style="height: 60px;">
-    <nav>
-        <ul>
-            <li><a [routerLink]="['employees']">Employees</a></li> 
-            <li><a [routerLink]="['/partyPage']">Parties</a></li>
-            <li><a [routerLink]="['/contractPage']">Contracts</a></li>
-            <li><a [routerLink]="['/CurrencyPage']">Currencies</a></li>
-            <li><a [routerLink]="['/FacilityPage']">Facilities</a></li>
-            <li><a href="#">LSDisbursement</a></li>
-        
+
+ <div class="header">
+     <div class="nav-items">
+        <ul class="ul-horizontal">
+            <li>
+                <div class="nav-item">
+                    <i class="material-icons"><a class="nav-link" [routerLink]="['']">Home</a></i>
+                </div>
+            </li>
+            <li>
+            <div class="nav-item">
+                <a class="nav-link" [routerLink]="['/employees']">Employees</a> 
+            </div>
+            </li>
+            <li>
+                <div class="nav-item">
+                <a class="nav-link" [routerLink]="['/partyPage','partyListPage']">Parties</a>
+                </div>
+            </li>
+            
+            <li>
+                <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/contractPage','contractListPage']">Contracts</a>
+                </div>
+            </li>
+            
+            <li>
+                <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/CurrencyPage','CurrencyListPage']">Currencies</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/FacilityPage','FacilityListPage']">Facilities</a>
+                </div>
+            </li>
+            
+            <li>
+            <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/DisbursementPage','DisbursementListPage']">Disbursement</a>
+                </div>
+            </li>
+            <li>
+            <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/BankPage','BankListPage']">Bank</a>
+                </div>
+            </li>
         </ul>
-    </nav>
- </div>
- <div class="search">
-    <form action="">
-        <input type="text" class="module-input">
-        <button><i class="material-icons">search</i></button>
-    </form>
- </div>
-<div class="demo">Lease Demo</div>
-<div class="right-side"><i class="material-icons">add</i></div>
     </div>
+</div>

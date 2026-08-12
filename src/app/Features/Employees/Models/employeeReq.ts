@@ -10,9 +10,10 @@ title:string,
 department:string,
 userHash: string;
 reportsTo:string,
-Address:string,
+address:string,
 officePhone:string,
 mobilePhone:string,
-notes:string
+notes:string,
+image:File
 
 }

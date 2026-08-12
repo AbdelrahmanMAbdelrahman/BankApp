@@ -1,0 +1,56 @@
+<div class="disbursement-form">
+
+    <div class="card">
+        <div class="card-header">
+        <h6 class="text-primary">Disbursement Search</h6>
+    </div>
+    <div class="card-body">
+        <form action="">
+            <!-- <div class="row"> -->
+            <div class="disbursement-search">
+
+                <div class="form-group ">
+                    <label for="amount" class="form-label">Amount</label>
+                    <input type="number" formControlName="amount" id="amount" class="form-control">
+                </div>
+                
+                <div class="form-group  ">
+                    <label for="contract" class="form-label">Contract</label>
+                    <input type="number" formControlName="contract" id="contract" class="form-control">
+                </div>
+                
+                <div class="form-group  ">
+                    <label for="facility" class="form-label">Facility</label>
+                    <select class="form-select" name="facility" formControlName="facility" id="facility">
+                        <option value=""></option>
+                    </select>
+                </div>
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+                
+                
+                <div class="form-group ">
+                    <label for="disbursementMethod" class="form-label">Disbursement Method</label>
+                    <select class="form-select" name="disbursementMethod" formControlName="disbursementMethod" id="disbursementMethod">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label for="disbursementDate" class="form-label">Disbursement Date</label>
+                    <input type="date" id="amount" formControlName="disbursementDate" class="form-control">
+                </div>
+            </div>
+            <!-- </div> -->
+        </form>
+    </div>
+    <div class="card-footer">
+        
+            <div class="footer-btn">
+                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-secondary">Clear</button>
+            </div>
+        
+    </div>
+</div>
+</div>
+ 

@@ -26,7 +26,7 @@ export class EmployeeDetails implements OnInit {
  
  const id=this.route.snapshot.paramMap.get('id');
  
-this.employeeRes=await this.employeeApiService.findEmployee(id);
+// this.employeeRes=await this.employeeApiService.findEmployee(id);
  
   }
 }

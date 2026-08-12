@@ -3,62 +3,42 @@
     margin: 0;
 
 }
-.nav-bar{
-    display: flex;
-    color: white;
-    /* justify-content: space-between; */
-}
-.nav-bar .home-icon{
-    font-size: 40px;
-    background-color: grey;
-    padding:0 10px;
-}
-.nav-links{
-    width: 65%;
-    display: flex;
-    padding: 15px;
-    height: 15px;
-    background-color: rosybrown;
-    overflow: hidden;
-}
-.nav-bar .nav-links nav ul{
-     
-    display: flex;
-    list-style: none;
-    
-}
 
-.nav-bar .nav-links nav ul a{
-    color: white;
-    
-    text-decoration: none;
-margin:  0 20px;
-font-size: 20px;
+.nav-items li{
+    /* display: inline; */
+    flex-direction: row;
+    width: 100%;
 }
-.nav-bar .search{
-    /* padding: 10px; */
-    margin-left: 5px;
-    width: 20vw;
-    background: linear-gradient(blue, black);
+ul{
+    list-style: none;
 }
- .nav-bar .search input{
-height: 30px;
- 
-}
-.nav-bar .demo{
-    /* margin-left: 350px; */
-background-color: rosybrown;
-padding: 0 10px;
-justify-content: center;
-align-items: center;
-display: flex;
-}
-.nav-bar .right-side{
-    background-color: green;
-    justify-content: center;
-    padding: 6px;
-    margin-left: 2px;
-    align-items: center;
+.nav-item{
+    padding: 10px 20px;
     display: flex;
-    margin-right: 0;
+    justify-content: center;
+    /* display: inline-flex; */
+    border: 1px solid black;
+    width: 100%;
 }
+li:hover{
+    background-color: black;
+    width: 120%;
+    transition: .5s;
+}
+.header{
+    background-color: grey;
+   
+ height: 5%;
+ width: 100%;
+}
+.nav-items{
+    width: 100%;
+}
+.ul-horizontal{
+/* display: inline; */
+ display: flex;
+    justify-content: space-between;
+}
+/* ul{
+    height: 6vh;
+} */

@@ -1,0 +1,11 @@
+@if(disbursement|async;as disbursement){
+<app-disbursement-detail-component
+[disbursement]="disbursement"
+(OnDeleteDisbursement)="deleteDisbursement()"
+(OnReviewDisbursement)="reviewDisbursement()"
+></app-disbursement-detail-component>
+}
+@else {
+<app-disbursement-detail-component></app-disbursement-detail-component>
+
+}

@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-header">
+        <h6 class="text-primary">
+            Disbursement Details
+        </h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col col-6 form-group">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="text" id="amount" [disabled]="true" [value]="disbursement?.amount" class="form-control">
+            </div>
+            <div class="col col-6 form-group">
+                <label for="contract" class="form-label">Contract</label>
+                <input type="text" id="contract" [disabled]="true" [value]="disbursement?.contract" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-6 form-group">
+                <label for="facility" class="form-label">Facility</label>
+                <input type="text" id="facility" [disabled]="true" [value]="disbursement?.facility" class="form-control">
+            </div>
+            <div class="col col-6 form-group">
+                <label for="method" class="form-label">Disbursement Method</label>
+                <input type="text" id="method" [disabled]="true" [value]="disbursement?.disbursementMethod" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-6 form-group">
+                <label for="date" class="form-label">Disbursement Date</label>
+                <input type="text" id="date" [disabled]="true" [value]="disbursement?.disbursementDate" class="form-control">
+            </div>
+            <div class="col col-6 form-group">
+                <label for="comments" class="form-label">Comments</label>
+                <textarea type="text" id="comments" [disabled]="true" [value]="disbursement?.comments" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row d-flex justify-content-end">
+            <div class="col col-6 d-flex justify-content-end">
+                <button [routerLink]="['/DisbursementPage','DisbursementCreatePage',disbursement?.id]" class="btn btn-primary">Edit</button>
+                <button [disabled]="disbursement?.reviewed" (click)="deleteDisbursement()" class="btn btn-danger">Delete</button>
+                <button [disabled]="disbursement?.reviewed" (click)="reviewDisbursement()" class="btn btn-success">Review</button>
+                <button [routerLink]="['../../','DisbursementListPage']" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header">
+        <h6 class="text-primary">Bank Create</h6>
+    </div>
+    <form action="" (submit)="saveBank()" [formGroup]="bankForm!">
+    <div class="card-body">
+
+            <div class="bank-fields">
+                <div class="form-group">
+                    <label for="lookupCode" class="form-label">Lookup Code </label>
+                    <input placeholder="lookupCode" type="text" id="lookupCode" formControlName="lookupCode" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="appreviation" class="form-label">Appreviation </label>
+                    <input placeholder="appreviation" type="text" id="appreviation" formControlName="appreviation" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="swiftCode" class="form-label">Swift Code </label>
+                    <input placeholder="swiftCode" type="text" id="swiftCode" formControlName="swiftCode" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="address" class="form-label">Address </label>
+                    <input placeholder="address" type="text" id="address" formControlName="address" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone </label>
+                    <input type="tel" placeholder="phone" id="phone" formControlName="phone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="fax" class="form-label">Fax </label>
+                    <input placeholder="fax" type="text" id="fax" formControlName="fax" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email </label>
+                    <input placeholder="your email" type="email" id="email" formControlName="email" class="form-control">
+                </div>
+                <div class="form-check mt-4">
+                    <label for="active" class="form-label">Active </label>
+                    <input type="checkbox" id="active" formControlName="active" class="form-check-input">
+                </div>
+                <div class="form-group">
+                    <label for="currency" class="form-label">Currency </label>
+                    <select name="currency" id="currency" formControlName="currency" class="form-select">
+                        <option *ngFor="let currency of Curriencies" [value]="currency.id">{{currency.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group description">
+                    <label for="description" class="form-label">Description </label>
+                    <textarea placeholder="description ..." type="text" id="description" formControlName="description" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="btns">
+                <button [disabled]="!bankForm?.valid" type="submit" class="btn btn-primary">Save</button>
+                <button (click)="clearInputs()" class="btn btn-secondary">Clear</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

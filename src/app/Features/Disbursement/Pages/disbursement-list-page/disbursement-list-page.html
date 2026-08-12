@@ -1,0 +1,16 @@
+<div class="disbursement-list-page">
+    <div class="disbursement-search-component">
+        <app-disbursement-search-component></app-disbursement-search-component>
+    </div>
+    <div class="disbursement-list-component">
+        @if(paginatedDisbursements|async;as paginated){
+        <app-disbursement-list-component
+        [paginated]="paginated"
+        ></app-disbursement-list-component>
+    }
+        @else {
+        <app-disbursement-list-component></app-disbursement-list-component>
+        }
+    </div>
+    
+</div>

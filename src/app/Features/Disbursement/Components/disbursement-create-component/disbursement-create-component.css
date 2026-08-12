@@ -1,0 +1,22 @@
+.footer-btn{
+    /* margin-right: 10px; */
+}
+.card-footer{
+    display: flex;
+    justify-content: end;
+}
+button{
+    margin:0 10px;
+padding: 0px 20px;
+}
+.card{
+    /* background-color: beige; */
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.disbursement-create{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(25vw,1fr));/*repeat(3,1fr) /*1fr 1fr 1fr;*/
+    gap: 10px;
+}

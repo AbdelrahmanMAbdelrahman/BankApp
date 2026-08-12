@@ -1,0 +1,26 @@
+.disbursement-form{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    /* background-color: grey; */
+}
+.card{
+    width: 100%;
+/* background-color:  beige; */
+}
+.card-footer{
+    display: flex;
+    justify-content: end;
+    width: 100%;}
+    button{
+        margin:0 10px;
+    }
+    /* .card-body{
+        background-color: beige;
+    } */
+
+    .disbursement-search{
+        display: grid;
+         grid-template-columns:repeat(3,1fr); /*1fr 1fr 1fr; */
+        gap: 10px;
+    }

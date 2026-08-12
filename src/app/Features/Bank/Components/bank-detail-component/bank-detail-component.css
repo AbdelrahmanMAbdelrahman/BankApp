@@ -1,0 +1,17 @@
+.bank-fields{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25%,1fr));
+    gap: 1%;
+
+}
+.description{
+    grid-row: 4/5;
+    grid-column: 1/3;
+}
+.card-footer{
+    display: grid;
+    justify-content: end;
+}
+button{
+    margin: 10px;
+}

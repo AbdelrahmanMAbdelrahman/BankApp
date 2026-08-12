@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { ICurrencyRes } from "../Models/ICurrencyRes";
 
-@Injectable()
+@Injectable({providedIn:'root'})
 export class CurrencyService{
     /**
      *

@@ -2,6 +2,8 @@
     /* background-color: grey; */
     padding: 10px;
     margin: 5px;
-    width: 83vw;
-    height: 65vh;
+    width: 95%;
+    height: 65%;
+    border:  10 solid red;
+    /* background-color: orange; */
 }

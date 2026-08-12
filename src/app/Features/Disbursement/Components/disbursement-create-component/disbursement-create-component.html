@@ -1,0 +1,59 @@
+<div class="card">
+    <form action="" (submit)="saveDisbursement()" [formGroup]="disbursementForm!">
+    <div class="card-header">
+        <h6 class="text-primary">Disbursement Form</h6>
+    </div>
+    <div class="card-body">
+
+       <div class="disbursement-create">
+                <div class="form-group  ">
+                <label for="facility" class="form-label">Facility</label>
+                <select name="facility" id="facility" formControlName="facility" class="form-select">
+                    <option *ngFor="let facility of facilities" [value]="facility.id">{{facility.accountNumber}}</option>
+                </select>
+            </div>
+            <div class="form-group  ">
+                <label for="contract" class="form-label">Contract</label>
+                <select name="contract" id="contract" formControlName="contract" class="form-select">
+                    <option *ngFor="let contract of contracts" [value]="contract.id">{{contract.contractNumber}}</option>
+                </select>
+            </div>
+    
+
+      
+            <div class="form-group  ">
+                <label for="amount" class="form-label">Amount</label>
+                <input placeholder="amount $" type="number" id="amount" formControlName="amount" class="form-control">
+            </div>
+            <div class="form-group  ">
+                <label for="disbursementDate" class="form-label">disbursement Date</label>
+                <input  type="date" id="disbursementDate" formControlName="disbursementDate" class="form-control">
+            </div>
+
+    
+            <div class="form-group  ">
+                <label for="disbursementMethod" class="form-label">Disbursement Method</label>
+                <select name="disbursementMethod" id="disbursementMethod" formControlName="disbursementMethod" class="form-select">
+                    <option [value]="1">first choice</option>
+                    <option [value]="2">second choice</option>
+                    <option [value]="3">third choice</option>
+                    <option [value]="4">fourth choice</option>
+                </select>
+            </div>
+            <div class="form-group  ">
+                <label for="comments" class="form-label">Comments</label>
+                <textarea placeholder="comments ..." name="comments" class="form-control" formControlName="comments" id="comments"></textarea>
+            </div>
+        </div>
+        </div>
+
+    <div class="card-footer">
+        <div class="footer-btn">
+            <button [disabled]="!disbursementForm?.valid" class="btn btn-primary" type="submit">Save</button>
+            <button (click)="clearForm()" class="btn btn-secondary">Clear</button>
+        </div>
+        
+    </div>
+</form>
+</div>
+
