@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from "@angular/router";
 import { EmployeeService } from '../../Services/employeeService';
 import { IEmployeeRes } from '../../Models/employeeRes';
 import { FormsModule } from '@angular/forms';
 import { EmployeeApiService } from '../../Services/employeeApiService';
+import { ApiResponse } from '../../../../Global/ApiResponse';
 
 @Component({
   selector: 'app-employee-details',
@@ -12,21 +13,25 @@ import { EmployeeApiService } from '../../Services/employeeApiService';
   styleUrl: './employee-details.css',
 })
 export class EmployeeDetails implements OnInit {
- employeeRes!:IEmployeeRes;
+
+@Input() employeeRes?:ApiResponse< IEmployeeRes>;
  
   constructor(
-    private employeeService:EmployeeService,
-    private employeeApiService:EmployeeApiService,
-    private route:ActivatedRoute) {
+  ) {
        
  
   }
+  get employeeImg():string{
+    if(!this.employee?.image){
+      return `D:/Angular/Bank/BankApp/src/Assets/images/image.png`
+    }
+    return `https://localhost:7125/api/File/${this.employeeRes?.value.image.id}`;
+  } 
+  get employee():IEmployeeRes|undefined{
+    return this.employeeRes?.value;
+  }
  async ngOnInit() {
- debugger;
- 
- const id=this.route.snapshot.paramMap.get('id');
- 
-// this.employeeRes=await this.employeeApiService.findEmployee(id);
- 
+
+
   }
 }

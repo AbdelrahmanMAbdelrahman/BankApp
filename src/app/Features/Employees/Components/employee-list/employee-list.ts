@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { IEmployeeRes } from '../../Models/employeeRes';
 
 import { CommonModule } from '@angular/common';
 import { EmployeeApiService } from '../../Services/employeeApiService';
 import { ApiResponse } from '../../../../Global/ApiResponse';
+import { IPaginatedList } from '../../../Facility/Models/PaginatedList';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,11 +14,18 @@ import { ApiResponse } from '../../../../Global/ApiResponse';
   styleUrl: './employee-list.css',
 })
 export class EmployeeList implements OnInit{
-@Input() response?:ApiResponse< IEmployeeRes[]>;
+  @Input() response?:ApiResponse<IPaginatedList< IEmployeeRes>>;
+  @Output()OnPaginate=new EventEmitter<number>();
   constructor() {
-  
     
     
+    
+  }
+  GetPrevious(pageNumber: number) {
+  this.OnPaginate?.emit(--pageNumber);
+  }
+  Getnext(pageNumber: number) {
+  this.OnPaginate?.emit(++pageNumber);
   }
  async ngOnInit() {
   console.log('employees',this.response);

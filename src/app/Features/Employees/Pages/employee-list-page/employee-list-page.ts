@@ -7,6 +7,7 @@ import { EmployeeApiService } from '../../Services/employeeApiService';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { ApiResponse } from '../../../../Global/ApiResponse';
+import { IPaginatedList } from '../../../Facility/Models/PaginatedList';
  
 @Component({
   selector: 'app-employee-list-page',
@@ -15,12 +16,15 @@ import { ApiResponse } from '../../../../Global/ApiResponse';
   styleUrl: './employee-list-page.css',
 })
 export class EmployeeListPage implements OnInit{
- response?:Observable<ApiResponse<IEmployeeRes[]>>;
+  response?:Observable<ApiResponse<IPaginatedList<IEmployeeRes>>>;
   constructor(private employeeApi:EmployeeApiService,private route:ActivatedRoute) {
     
   }
+  Paginate(pageNumber: number) {
+  this.response=this.employeeApi.GetEmployees(pageNumber);
+  }
   ngOnInit(): void {
-this.response=this.employeeApi.GetEmployees();
+this.response=this.employeeApi.GetEmployees(1);
 
   }
   private get employeeID(){return this.route.snapshot.paramMap.get("id")??"0";}

@@ -1,96 +1,91 @@
-<form action="" [formGroup]="employeeForm" (submit)="saveEmmployee()">
-    <div class="card bg-secondary m-1 p-3">
-        <div class="person-data">
-        <div class="form-group">
-            <label for="fName" class="form-label">First Name</label>
-            <input type="text" name="fName" formControlName="fName"  class="form-control" id="fName">
-        </div>
-        <div class="form-group">
-            <label for="lName" class="form-label">Last Name</label>
-            <input type="text" name="lName" formControlName="lName" class="form-control" id="lName">
-        </div>
-        <div class="form-group">
-            <label for="status" class="form-label">Employee Status</label>
-            <select formControlName="status" name="status" id="status" class="form-select">
-                <option value="1">Active</option>
-                <option value="2">Terminated</option>
-                <option value="3">Leave of Absence</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="role" class="form-label">Employee Role</label>
-            <select formControlName="role" name="role" id="role" class="form-select">
-                <option value="1">Business Develpoment Reports</option>
-                <option value="2">CFO</option>
-                <option value="3">COO</option>
-            </select>
-        </div>
-        <div class="form-group image-field">
-            <img [src]="imageSelected" alt="">
+<div class="card">
+    <form action="" [formGroup]="employeeForm" (submit)="saveEmmployee()">
+<div class="card-header">
+    <div class="form-group image-field">
+            <img [src]="imageSelected" alt="select image">
             <div class="flex-input">
-
                 <input #fileInput type="file" (change)="selectFile($event)" accept="image/*" class="form-control">
                 <button (click)="clearImage(fileInput)" class="btn btn-secondary">clear</button>
             </div>
-        </div>
+    </div>
+</div>
 
-         
-    </div>
-    </div>
-    <div class="card bg-secondary m-1 p-3">
-        <legend class="m-2 text-light">Employee settings</legend>
-        <div class="row p-3">
-            <div class="col-md-6 mb-1">
-                <label for="userName" class="form-label">User Name</label>
-                <input name="userName" formControlName="userName" type="text" id="userName" class="form-control">
-            </div>
-            <div class="col-md-6 mb-1">
-                <label for="userHash" class="form-label">User Hash</label>
-                <input name="userHash" formControlName="userHash" type="text" id="userHash" class="form-control">
-            </div>
-            <div class="col-md-6 mb-1">
-                <label for="title" class="form-label">Title</label>
-                <input name="title" type="text" formControlName="title" id="title" class="form-control">
-            </div>
-            <div class="col-md-6 mb-1">
-                <label for="department" class="form-label">Department</label>
-                <input name="department" type="text" formControlName="department" id="department" class="form-control">
-            </div>
-            <div class="col-md-6 mb-1">
+<div class="card-body">
+                <div class="employee-fields">
+
+                    <div class="form-group">
+                        <label for="fName" class="form-label">First Name</label>
+                    <input type="text" name="fName" formControlName="fName"  class="form-control" id="fName">
+                </div>
+                <div class="form-group">
+                    <label for="lName" class="form-label">Last Name</label>
+                    <input type="text" name="lName" formControlName="lName" class="form-control" id="lName">
+                </div>
+                <div class="form-group">
+                    <label for="status" class="form-label">Employee Status</label>
+                    <select formControlName="status" name="status" id="status" class="form-select">
+                        <option value="1">Active</option>
+                        <option value="2">Terminated</option>
+                        <option value="3">Leave of Absence</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="role" class="form-label">Employee Role</label>
+                    <select formControlName="role" name="role" id="role" class="form-select">
+                        <option value="1">Business Develpoment Reports</option>
+                        <option value="2">CFO</option>
+                        <option value="3">COO</option>
+                    </select>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="userName" class="form-label">User Name</label>
+                    <input name="userName" formControlName="userName" type="text" id="userName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="userHash" class="form-label">User Hash</label>
+                    <input name="userHash" formControlName="userHash" type="text" id="userHash" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="title" type="text" formControlName="title" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+            <label for="department" class="form-label">Department</label>
+            <input name="department" type="text" formControlName="department" id="department" class="form-control">
+        </div>
+        <div class="form-group">
                 <label for="officePhone" class="form-label">office Phone </label>
                 <input name="officePhone" type="tel" formControlName="officePhone" id="officePhone" class="form-control">
             </div>
-            <div class="col-md-6 mb-1">
+            <div class="form-group">
                 <label for="mobilePhone" class="form-label">Modile Phone</label>
                 <input name="mobilePhone" type="tel" formControlName="mobilePhone" id="mobilePhone" class="form-control">
             </div>
-            <div class="col-md-6 mb-1">
+            <div class="form-group">
                 <label for="reportTo" class="form-label">report To</label>
                 <input name="reportsTo" type="text" formControlName="reportsTo" id="reportTo" class="form-control">
             </div>
-            <div class="col-md-6 mb-1">
+            <div class="form-group">
                 <label for="email" class="form-label">Email</label>
                 <input name="email" type="email" formControlName="email" id="email" class="form-control">
             </div>
-            <div class="col-md-9 mb-1">
-                <label for="email" class="form-label">Notes</label>
-                <textarea name="notes" name="notes" formControlName="notes" id="notes" class="form-control"></textarea>
-                <!-- <input type="email" id="email" class="form-control"> -->
+            <div class="form-group ">
+                <label for="primaryAddress" class="form-label">primary Address</label>
+                <textarea name="address" formControlName="address" name="primaryAddress" id="primaryAddress" class="form-control"></textarea>
             </div>
         </div>
+            
     </div>
-    <div class="card bg-secondary m-1 p-3">
-        <div class="row p-3">
-            <div class="col-md-9 mb-1">
-        <label for="primaryAddress" class="form-label">primary Address</label>
-        <textarea name="address" formControlName="address" name="primaryAddress" id="primaryAddress" class="form-control"></textarea>
-        </div>
-        </div>
-    </div>
-    <div class="btns d-flex ">
-        
-        <input type="submit" class="btn btn-primary m-3">
-        <!-- <button class="btn btn-primary m-3">Save</button> -->
-        <button class="btn btn-secondary m-3">Cancel</button>
-    </div>
+
+<div class="card-footer">
+                <div class="employee-btns">
+                    
+                    <button type="submit" class="btn btn-primary m-3">Save</button>
+                    <button class="btn btn-secondary m-3">Clear</button>
+                </div>
+</div>
     </form>
+</div>

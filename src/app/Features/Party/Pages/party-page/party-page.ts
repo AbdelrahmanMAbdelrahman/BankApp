@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PartySideBar } from "../../Components/party-side-bar/party-side-bar";
+import { Sidebar } from '../../../Shared/sidebar/sidebar';
+
+
  
 
 @Component({
   selector: 'app-party-page',
-  imports: [RouterOutlet, PartySideBar],
+  imports: [RouterOutlet, Sidebar],
   templateUrl: './party-page.html',
   styleUrl: './party-page.css',
 })

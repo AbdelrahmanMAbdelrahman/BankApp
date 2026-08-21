@@ -1,0 +1,28 @@
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px;
+    align-items: center;
+}
+ 
+.nav-item{
+
+    padding: 10px 20px 10px 5px ;
+    transition: 0.5s ease;
+    /* background-color: orange; */
+    margin: 0 auto;
+    height: 50px;
+}
+.nav-item i{
+    font-size: 30px;
+}
+.nav-item p{
+    margin: 0;
+}
+.nav-item:hover{
+    background-color: rgb(66, 66, 66);
+}
+ 

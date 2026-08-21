@@ -1,0 +1,25 @@
+.employee-page{
+   
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.side-bar{
+height: 100%;
+width: 3%;
+background-color: grey;
+overflow: hidden;
+transition: .5s ease;
+border-radius: 0 20px 20px 0;
+}
+.employee-outlet{
+    width: 97%;
+    height: 100%;
+}
+.side-bar:hover{
+width: 18%;
+}
+
+
+ 

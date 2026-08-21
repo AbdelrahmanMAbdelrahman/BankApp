@@ -1,9 +1,10 @@
-import { Component, EventEmitter, NgModule, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, OnInit, Output } from '@angular/core';
 import { IEmployeeReq } from '../../Models/employeeReq';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Form, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeApiService } from '../../Services/employeeApiService';
+import { IEmployeeRes } from '../../Models/employeeRes';
 
 @Component({
   selector: 'app-employee-form',
@@ -14,6 +15,7 @@ import { EmployeeApiService } from '../../Services/employeeApiService';
 export class EmployeeForm implements OnInit{
   imageSelected:string|null=null;
   employeeForm!:FormGroup;
+  @Input()Employee?:IEmployeeRes;
   @Output() OnSaveEmployee=new EventEmitter<IEmployeeReq>();
   constructor(
     public employeeApiService:EmployeeApiService,
@@ -23,6 +25,9 @@ export class EmployeeForm implements OnInit{
     }
     ngOnInit(): void {
       this.initForm();
+      debugger;
+      if(this.Employee)
+        this.fillForm();
     }
     clearImage(fileInput:HTMLInputElement) {
     this.imageSelected=null;
@@ -53,9 +58,28 @@ export class EmployeeForm implements OnInit{
       'officePhone':new FormControl(null,Validators.required),
       'mobilePhone':new FormControl(null,Validators.required),
       'notes':new FormControl(null),
-      'image':new FormControl(null),
-
+      'image':new FormControl<File|null>(null)
     });
+  }
+  fillForm(){
+    this.employeeForm.patchValue({
+      "fName":this.Employee?.fName,
+      "lName":this.Employee?.lName,
+      "userName":this.Employee?.userName,
+      "email":this.Employee?.email,
+      "role":this.Employee?.role,
+      "status":this.Employee?.status,
+      "title":this.Employee?.title,
+      "department":this.Employee?.department,
+      "userHash":this.Employee?.userHash,
+      "reportsTo":this.Employee?.reportsTo,
+      "address":this.Employee?.address,
+      "officePhone":this.Employee?.officePhone,
+      "mobilePhone":this.Employee?.mobilePhone,
+      "notes":this.Employee?.notes,
+      // "image":this.Employee?.image,
+    });
+  this.imageSelected=`https://localhost:7125/api/File/${this.Employee?.image.id}`;
   }
 saveEmmployee() {
 let employee:IEmployeeReq= {
@@ -73,7 +97,7 @@ let employee:IEmployeeReq= {
   officePhone: this.employeeForm?.get('officePhone')?.value ?? "",
   mobilePhone: this.employeeForm?.get('mobilePhone')?.value ?? "",
   notes: this.employeeForm?.get('notes')?.value ?? "",
-  image: this.employeeForm?.get('image')?.value ?? ""// need update
+  image: this.employeeForm?.get('image')?.value ?? ""
 }
 console.log(employee);
  this.OnSaveEmployee?.emit(employee);

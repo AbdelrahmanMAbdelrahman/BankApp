@@ -1,7 +1,12 @@
-<!-- <p>employee-page works!</p> -->
- <div class="d-flex">
-<app-employee-sidebar></app-employee-sidebar>
-<div class="flex-grow-1 p-4">
+
+ <div class="employee-page">
+    <div class="side-bar">
+        <app-sidebar
+        ListLink="/EmployeePage/EmployeeListPage"
+        CreateLink="/EmployeePage/EmployeeCreatePage/0"
+        ></app-sidebar>
+    </div>
+<div class="employee-outlet">
 <router-outlet></router-outlet>
 </div>
 </div>

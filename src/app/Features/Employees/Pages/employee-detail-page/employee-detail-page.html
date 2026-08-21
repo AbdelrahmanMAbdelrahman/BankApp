@@ -1,3 +1,9 @@
-<div>
-    <app-employee-details></app-employee-details>
+<div class="detail-page">
+    @if(response |async;as response){
+    <app-employee-details
+    [employeeRes]="response"
+    ></app-employee-details>}
+    @else {
+        <app-employee-details></app-employee-details>
+    }
 </div>

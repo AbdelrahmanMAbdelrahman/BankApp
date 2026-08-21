@@ -1,5 +1,12 @@
 
-
-<div class="container expanded bg-dark">
-    <app-employee-form  (OnSaveEmployee)="saveEmployee($event)"></app-employee-form>
+@if(employeeRes|async;as employee){
+<div class="employee-form">
+    <app-employee-form
+    [Employee]="employee.value"
+      (OnSaveEmployee)="saveEmployee($event)"></app-employee-form>
 </div>
+}@else{
+ <div class="employee-form">
+    <app-employee-form  (OnSaveEmployee)="saveEmployee($event)"></app-employee-form>
+</div>   
+}

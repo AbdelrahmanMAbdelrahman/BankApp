@@ -1,63 +1,73 @@
 
 
-<legend class="text-light">Abdelrahman</legend>
 
-<div class="d-flex">
-    <button [routerLink]="['../employeeCreate']" class="btn btn-secondary m-2">Edit</button>
+
+<div class="card">
+    <div class="card-header d-flex">
+<legend class="text-light">{{employeeRes?.value?.fName}} {{employeeRes?.value?.lName}}</legend>
+        <div class="form-group">
+            <img [src]="employeeImg??''" alt=""> 
+        </div>
+    </div>
+    <div class="card-body">
+
+        <div class="employee-details">
+            
+    <div class="form-group">
+        <label for="status" class="form-label">Employee Status</label>
+        <input type="text" [value]="employeeRes?.value?.status" id="status" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" [value]="employeeRes?.value?.fName" id="name" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="userName" class="form-label">userName</label>
+        <input type="text" [value]="employeeRes?.value?.userName" id="userName" class="form-control" disabled >
+    </div>
+    <div class="form-group">
+        <label for="role" class="form-label">Employee Role</label>
+        <input type="text" [value]="employeeRes?.value?.role" id="role" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" [value]="employeeRes?.value?.title" id="title" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="officePhone" class="form-label">office Phone</label>
+        <input type="text" [value]="employeeRes?.value?.officePhone" id="officePhone" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="department" class="form-label">Department</label>
+        <input type="text" [value]="employeeRes?.value?.department" id="department" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="mobilePhone" class="form-label">mobile Phone</label>
+        <input type="text" [value]="employeeRes?.value?.mobilePhone" id="mobilePhone" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="reportTo" class="form-label">report To</label>
+        <input type="text" [value]="employeeRes?.value?.reportsTo" id="reportTo" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" [value]="employeeRes?.value?.email" id="email" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" [value]="employeeRes?.value?.address" id="address" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="notes" class="form-label">Notes</label>
+        <input type="text" [value]="employeeRes?.value?.notes" id="notes" class="form-control" disabled>
+    </div>
+</div>
+</div>
+<div class="card-footer d-flex justify-content-end">
+    <div class="footer-btn">
+    <button [routerLink]="['/EmployeePage','EmployeeCreatePage',employee?.id]" class="btn btn-secondary m-2">Edit</button>
     <button class="btn btn-secondary m-2">Dublicate</button>
     <button class="btn btn-secondary m-2">Change Password</button>
 </div>
-
-<div class="card bg-dark">
-    <legend class="text-light p-3">Employee Information</legend>
-<div class="row p-3 ">
-    <div class="col-md-6">
-        <label for="status" class="form-label">Employee Status</label>
-        <input type="text" [(ngModel)]="employeeRes.status" id="status" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" [(ngModel)]="employeeRes.fName" id="name" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="userName" class="form-label">userName</label>
-        <input type="text" [(ngModel)]="employeeRes.userName" id="userName" class="form-control" disabled >
-    </div>
-    <div class="col-md-6">
-        <label for="role" class="form-label">Employee Role</label>
-        <input type="text" [(ngModel)]="employeeRes.role" id="role" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" [(ngModel)]="employeeRes.title" id="title" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="officePhone" class="form-label">office Phone</label>
-        <input type="text" [(ngModel)]="employeeRes.officePhone" id="officePhone" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="department" class="form-label">Department</label>
-        <input type="text" [(ngModel)]="employeeRes.department" id="department" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="mobilePhone" class="form-label">mobile Phone</label>
-        <input type="text" [(ngModel)]="employeeRes.mobilePhone" id="mobilePhone" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="reportTo" class="form-label">report To</label>
-        <input type="text" [(ngModel)]="employeeRes.reportsTo" id="reportTo" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="email" class="form-label">Email</label>
-        <input type="text" [(ngModel)]="employeeRes.email" id="email" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="address" class="form-label">Address</label>
-        <input type="text" [(ngModel)]="employeeRes.address" id="address" class="form-control" disabled>
-    </div>
-    <div class="col-md-6">
-        <label for="notes" class="form-label">Notes</label>
-        <input type="text" [(ngModel)]="employeeRes.notes" id="notes" class="form-control" disabled>
-    </div>
 </div>
 </div>

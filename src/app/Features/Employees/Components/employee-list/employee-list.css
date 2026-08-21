@@ -1,0 +1,39 @@
+.card{
+    height: 100%;
+    width: 100%;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+     
+   
+}
+.card-body{
+    height: 80%;
+    width: 100%;
+}
+.card-footer{
+    display: flex;
+    justify-content: end;
+}
+.pagination{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.text-primary , .btn-primary{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: start;
+}
+ i{
+    font-size: 30px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}

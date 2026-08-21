@@ -1,51 +1,73 @@
 
  <div class="header">
-     <div class="nav-items">
-        <ul class="ul-horizontal">
+    <nav class="navbar">
+        <a class="nav-link" [routerLink]="['']">
+            <i class="fa-solid fa-house"></i>
+            <p>Home</p>  
+        </a>
+        <ul class="nav-items">
+  
             <li>
                 <div class="nav-item">
-                    <i class="material-icons"><a class="nav-link" [routerLink]="['']">Home</a></i>
+                    <a class="nav-link" [routerLink]="['/EmployeePage','EmployeeListPage']">
+                        <i class="fa-solid fa-users"></i>
+                        <p>Employees</p>  
+                    </a> 
                 </div>
             </li>
             <li>
-            <div class="nav-item">
-                <a class="nav-link" [routerLink]="['/employees']">Employees</a> 
-            </div>
-            </li>
-            <li>
                 <div class="nav-item">
-                <a class="nav-link" [routerLink]="['/partyPage','partyListPage']">Parties</a>
+                    <a class="nav-link" [routerLink]="['/PartyPage','PartyListPage']">
+                        <i class="fa-solid fa-building"></i>
+                        <p>Parties</p> 
+                    </a>
                 </div>
             </li>
             
             <li>
                 <div class="nav-item">
-                    <a class="nav-link" [routerLink]="['/contractPage','contractListPage']">Contracts</a>
+                    <a class="nav-link" [routerLink]="['/ContractPage','ContractListPage']">
+                        <i class="fa-solid fa-handshake"></i>
+                         <p>Contracts</p>
+                        </a>
                 </div>
             </li>
             
             <li>
                 <div class="nav-item">
-                    <a class="nav-link" [routerLink]="['/CurrencyPage','CurrencyListPage']">Currencies</a>
-                </div>
-            </li>
-
-            <li>
-                <div class="nav-item">
-                    <a class="nav-link" [routerLink]="['/FacilityPage','FacilityListPage']">Facilities</a>
+                    <a class="nav-link" [routerLink]="['/CurrencyPage','CurrencyListPage']">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                        <p>Currencies</p>
+                        </a>
                 </div>
             </li>
             
             <li>
-            <div class="nav-item">
-                    <a class="nav-link" [routerLink]="['/DisbursementPage','DisbursementListPage']">Disbursement</a>
+                <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/FacilityPage','FacilityListPage']">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                        <p>Facilities</p>
+                        </a>
+                </div>
+            </li>
+            
+            <li>
+                <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/DisbursementPage','DisbursementListPage']">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <p>Disbursement</p>
+                        </a>
                 </div>
             </li>
             <li>
-            <div class="nav-item">
-                    <a class="nav-link" [routerLink]="['/BankPage','BankListPage']">Bank</a>
+                <div class="nav-item">
+                    <a class="nav-link" [routerLink]="['/BankPage','BankListPage']">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <p>Bank</p>
+                        </a>
                 </div>
             </li>
         </ul>
-    </div>
+   
+</nav>
 </div>

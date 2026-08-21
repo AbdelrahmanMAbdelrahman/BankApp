@@ -14,6 +14,6 @@ address:string,
 officePhone:string,
 mobilePhone:string,
 notes:string,
-image:File
+image?:File
 
 }

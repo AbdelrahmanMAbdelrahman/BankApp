@@ -1,0 +1,15 @@
+.employee-form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
+    gap: 1%;
+     
+}
+.card-footer{
+    display: flex;
+    justify-content: end;
+}
+.search-btns{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5%;
+}

@@ -39,22 +39,22 @@ import { BankDetailPage } from './Features/Bank/Pages/bank-detail-page/bank-deta
 export const routes: Routes = [
 
     {path:"",component:Home},
-    {path:"employees",component:EmployeePage,children:[
+    {path:"EmployeePage",component:EmployeePage,children:[
         
-        {path:"employeeCreatePage",component:EmployeeCreatPage},
-        {path:"employeeListPage",component:EmployeeListPage},
-        {path:"employeeDetailPage/:id",component:EmployeeDetailPage},
+        {path:"EmployeeCreatePage/:id",component:EmployeeCreatPage},
+        {path:"EmployeeListPage",component:EmployeeListPage},
+        {path:"EmployeeDetailPage/:id",component:EmployeeDetailPage},
     ]},
-    {path:"partyPage",component:PartyPage,children:[
-        {path:"partyListPage",component:PartyListPage},
-        {path:"partyCreatePage/:id",component:PartyCreatePage},
-        {path:"partyDetailPage/:id",component:PartyDetailPage},
+    {path:"PartyPage",component:PartyPage,children:[
+        {path:"PartyListPage",component:PartyListPage},
+        {path:"PartyCreatePage/:id",component:PartyCreatePage},
+        {path:"PartyDetailPage/:id",component:PartyDetailPage},
     ]},
     {path:"contractPage",component:ContractPage,
         children:[
-            {path:"contractListPage",component:ContractListPage},
+            {path:"ContractListPage",component:ContractListPage},
             {path:"contractCreatePage/:id",component:ContractCreatePage},
-            {path:"contractDetailPage/:id",component:ContractDetailPage},
+            {path:"ContractDetailPage/:id",component:ContractDetailPage},
         ]
     },
     {

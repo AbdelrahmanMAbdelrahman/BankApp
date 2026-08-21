@@ -1,10 +1,19 @@
-<app-employee-filter></app-employee-filter>
-@if(response|async;as res){
-<app-employee-list
+<div class="employee-list-page">
+    <div class="employee-search">
+
+        <app-employee-filter ></app-employee-filter>
+    </div>
+    <div class="employee-list">
+
+        @if(response|async;as res){
+            <app-employee-list
 [response]="res"
+(OnPaginate)="Paginate($event)"
 ></app-employee-list>
 }
 @else {
-<app-employee-list></app-employee-list>
-
+    <app-employee-list></app-employee-list>
+    
 }
+</div>
+</div>
